@@ -1,29 +1,50 @@
 import React, { Component } from 'react';
-// RHL only for front end development
-import { hot } from 'react-hot-loader';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
-import { GOOGLE_API } from '../../.env'
-
-const mapStyles = {
-  width: '100%',
-  height: '100%'
-};
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import {GOOGLE_API} from '../../.env';
+import CurrentLocation from './Map';
 
 export class MapContainer extends Component {
-  render() {
-    return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{
-         lat: 19.4220866,
-         lng: -99.1718937
-        }}
-      />
-    );
-  }
+	//add state for marker
+	state = {
+		showingInfoWindow: false, //Hides or the shows the infoWindow
+		activeMarker: {}, //Shows the active marker upon click
+		selectedPlace: {} //Shows the infoWindow to the selected place upon a marker
+	};
+	//event handlers for when the map and the marker are clicked.
+	onMarkerClick = (props, marker, e) =>
+		this.setState({
+			selectedPlace: props,
+			activeMarker: marker,
+			showingInfoWindow: true
+		});
+	//event handlers for when the map and the marker are clicked.
+	onClose = (props) => {
+		if (this.state.showingInfoWindow) {
+			this.setState({
+				showingInfoWindow: false,
+				activeMarker: null
+			});
+		}
+	};
+
+	render() {
+		return (
+			<CurrentLocation centerAroundCurrentLocation google={this.props.google}>
+				<Marker onClick={this.onMarkerClick} name={'current'} />
+				<InfoWindow
+					marker={this.state.activeMarker}
+					visible={this.state.showingInfoWindow}
+					onClose={this.onClose}
+				>
+					<div>
+						<h4>{this.state.selectedPlace.name}</h4>
+					</div>
+				</InfoWindow>
+			</CurrentLocation>
+		);
+	}
 }
+
 
 export default GoogleApiWrapper({
   apiKey:  GOOGLE_API
