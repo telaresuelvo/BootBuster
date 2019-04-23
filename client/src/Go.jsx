@@ -1,18 +1,26 @@
-import React from 'react';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import SecondView from "./SecondView.jsx";
 
 class Go extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
   }
   render() {
     return (
-      <div style={{ marginLeft: 130 }}>
-        <button className="btn btn-lg btn-success" disabled={!this.props.value} onClick={this.props.startCountDown}>Start</button>
+      <div>
+        <button
+          className="btn btn-lg btn-success"
+          disabled={!this.props.value}
+          onClick={this.props.startCountDown}
+        >
+          <Link to={{ pathname: "/SecondView", state: { isClicked: true } }}>
+            Start
+          </Link>
+        </button>
       </div>
-
     );
   }
 }
-console.log('exist')
+console.log("exist");
 export default Go;

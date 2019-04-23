@@ -3,18 +3,20 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import { GOOGLE_API } from "../../.env";
 import MapContainer from "./MapContainer.jsx";
 import CurrentLocation from "./Map.jsx";
-
+import Clock from "./Clock";
 class InitialView extends Component {
   constructor(props) {
     super(props);
     this.state = {
       items: []
     };
+
     //this.addItem = this.addItem.bind(this);
-    this.getData = this.getData.bind(this);
+    //this.getData = this.getData.bind(this);
     //this.postData = this.postData.bind(this);
     //this.deleteItem = this.deleteItem.bind(this);
   }
+  /*
   componentDidMount() {
     this.getData("/address");
   }
@@ -46,12 +48,17 @@ class InitialView extends Component {
   //   const newItem = {
   //     id:list.length + 1,
   //   };
-
+*/
   render() {
-    console.log(this.state.items);
     return (
       <div>
-        <MapContainer />
+        <div>
+          <MapContainer />
+        </div>
+        <br />
+        <div>
+          <Clock />
+        </div>
       </div>
     );
   }
