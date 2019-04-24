@@ -11,12 +11,9 @@ class Go extends React.Component {
       <div>
         <button
           className="btn btn-lg btn-success"
-          disabled={!this.props.value}
           onClick={this.props.startCountDown}
         >
-          <Link to={{ pathname: "/SecondView", state: { isClicked: true } }}>
-            Start
-          </Link>
+          Start
         </button>
       </div>
     );

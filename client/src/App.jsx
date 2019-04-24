@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import { GOOGLE_API } from "../../.env";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import InitialView from "./InitialView";
 import SecondView from "./SecondView";
 
@@ -32,3 +32,4 @@ export default class App extends Component {
     );
   }
 }
+

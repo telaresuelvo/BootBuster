@@ -4,6 +4,7 @@ import { GOOGLE_API } from "../../.env";
 import MapContainer from "./MapContainer.jsx";
 import CurrentLocation from "./Map.jsx";
 import Clock from "./Clock";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 class InitialView extends Component {
   constructor(props) {
     super(props);
