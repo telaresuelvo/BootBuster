@@ -19,14 +19,11 @@ export default class TwoClock extends Component {
     this.startCountDown = this.startCountDown.bind(this);
     this.tick = this.tick.bind(this);
   }
-  /*
+
   componentDidMount() {
-    console.log(this.props.parent)
-    this.setState({
-      seconds: this.props.parent.seconds,
-      value: this.props.parent.value
-    });
+    this.startCountDown();
   }
+  /*
 
 
   componentWillUnmount() {
@@ -71,15 +68,16 @@ export default class TwoClock extends Component {
 
   startCountDown() {
     this.intervalHandle = setInterval(this.tick, 1000);
-    let time = this.state.value;
+    let time = this.props.trans;
     this.secondsRemaining = time * 60;
-    this.setState({
-      isClicked: true
-    });
   }
 
   render() {
-    console.log("seond clock", this.props);
+    console.log(
+      " receiving props from second view",
+      this.props.trans,
+      this.props.sec
+    );
     return (
       <div>
         <div className="row">
