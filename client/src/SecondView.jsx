@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 export default class SecondView extends Component {
   render() {
-    console.log("this props second view", this.props);
+    console.log("this props second view", this.props.location.state.trans);
     return (
       <div>
         <div>
