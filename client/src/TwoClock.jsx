@@ -23,14 +23,6 @@ export default class TwoClock extends Component {
   componentDidMount() {
     this.startCountDown();
   }
-  /*
-
-
-  componentWillUnmount() {
-    // Remove this to see warning.
-    clearInterval(this.interval);
-  }
-  */
 
   handleChange(event) {
     this.setState({
