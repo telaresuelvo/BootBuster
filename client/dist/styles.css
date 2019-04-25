@@ -16,3 +16,21 @@
   position: relative;
   background-color: skyblue;
 }
+
+.first {
+  position: relative;
+  bottom: -200px;
+  background-color: yellow;
+}
+.second {
+  position: relative;
+
+  bottom: -200px;
+  background-color: orange;
+}
+.third {
+  position: relative;
+
+  bottom: -200px;
+  background-color: red;
+}

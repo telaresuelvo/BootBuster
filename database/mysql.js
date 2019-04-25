@@ -13,7 +13,7 @@ const config = {
 const connection = mysql.createConnection(config);
 
 //Example mysql query using Promises
-const selectAll = function (cb) {
+const selectAll = function(cb) {
   return new Promise((resolve, reject) => {
     connection.query('SELECT * FROM items', (err, data) => {
       if (err) {
@@ -23,7 +23,33 @@ const selectAll = function (cb) {
     });
   });
 };
+const postAddress = (address, cb) => {
+  connection.query(
+    'INSERT INTO items (address) VALUES (?);',
+    [address],
+    (error, results) => {
+      if (error) {
+        throw error;
+      } else {
+        cb(results);
+      }
+    }
+  );
+};
+//
+// const insertOne = function (address, cb){
+//   con.query('INSERT INTO history (address)VALUES(?)',
+//   [, address], (err, results, field) => {
+//     if(err) {
+//       console.log(posErr1);
+//       cb(err, null);
+//     }else{
+//       console.log(results);
+//       cb(null, results);
+//     }
+//   })
+// }
 
 module.exports = {
-  selectAll,
+  selectAll,postAddress
 };
