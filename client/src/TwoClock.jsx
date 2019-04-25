@@ -1,27 +1,41 @@
-import React from "react";
+import React, { Component } from "react";
 import TimerInput from "./TimerInput.jsx";
 import Go from "./Go.jsx";
 import Timer from "./Timer.jsx";
 import { Link, Route } from "react-router-dom";
-import SecondView from "./SecondView.jsx";
 
-class Clock extends React.Component {
+export default class TwoClock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: "00",
+      seconds: "",
       value: "",
       isClicked: false
     };
+
     this.secondsRemaining;
     this.intervalHandle;
     this.handleChange = this.handleChange.bind(this);
     this.startCountDown = this.startCountDown.bind(this);
     this.tick = this.tick.bind(this);
   }
+  /*
+  componentDidMount() {
+    console.log(this.props.parent)
+    this.setState({
+      seconds: this.props.parent.seconds,
+      value: this.props.parent.value
+    });
+  }
+
+
+  componentWillUnmount() {
+    // Remove this to see warning.
+    clearInterval(this.interval);
+  }
+  */
 
   handleChange(event) {
-    event.preventDefault();
     this.setState({
       value: event.target.value
     });
@@ -65,32 +79,16 @@ class Clock extends React.Component {
   }
 
   render() {
-    const clicked = this.state.isClicked;
-    let clockTrans = this.state.value;
-    console.log("first", clockTrans);
+    console.log("seond clock", this.props);
     return (
       <div>
         <div className="row">
+          <div className="col-md-4" />
           <div className="col-md-4">
             <Timer value={this.state.value} seconds={this.state.seconds} />
-            <Link
-              to={{
-                pathname: "/SecondView",
-                state: { new: this.state.seconds, trans: clockTrans }
-              }}
-            >
-              <Go className="start" startCountDown={this.startCountDown} />
-            </Link>
-
-            <TimerInput
-              value={this.state.value}
-              handleChange={this.handleChange}
-            />
           </div>
         </div>
       </div>
     );
   }
 }
-
-export default Clock;

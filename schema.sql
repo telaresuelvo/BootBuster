@@ -5,8 +5,7 @@ CREATE DATABASE history;
 USE history;
 
 CREATE TABLE items (
- id INT NOT NULL AUTO_INCREMENT,
+ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY(id),
  address VARCHAR(60) NOT NULL,
- PRIMARY KEY(ID)
 );
 INSERT INTO items (address) VALUES ('949 bryce canyon salt lake city ut');

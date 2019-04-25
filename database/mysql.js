@@ -6,14 +6,14 @@ const mysql = require('mysql2');
 const config = {
   host: 'localhost',
   user: 'root',
-  password: 'Holacode1',
+  password: 'Holacode',
   database: 'history',
 };
 
 const connection = mysql.createConnection(config);
 
 //Example mysql query using Promises
-const selectAll = function(cb) {
+const selectAll = function (cb) {
   return new Promise((resolve, reject) => {
     connection.query('SELECT * FROM items', (err, data) => {
       if (err) {
