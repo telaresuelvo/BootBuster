@@ -64,7 +64,7 @@ class Clock extends React.Component {
   render() {
     const clicked = this.state.isClicked;
     let clockTrans = this.state.value;
-    console.log("first", clockTrans, "");
+    console.log("first ", clockTrans, "");
     return (
       <div>
         <div className="row">
