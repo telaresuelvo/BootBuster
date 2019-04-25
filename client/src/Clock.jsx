@@ -59,15 +59,12 @@ class Clock extends React.Component {
     this.intervalHandle = setInterval(this.tick, 1000);
     let time = this.state.value;
     this.secondsRemaining = time * 60;
-    this.setState({
-      isClicked: true
-    });
   }
 
   render() {
     const clicked = this.state.isClicked;
     let clockTrans = this.state.value;
-    console.log("first", clockTrans, "");
+    console.log("first ", clockTrans, "");
     return (
       <div>
         <div className="row">
@@ -76,7 +73,11 @@ class Clock extends React.Component {
             <Link
               to={{
                 pathname: "/SecondView",
-                state: { new: this.state.seconds, trans: clockTrans }
+                state: {
+                  sec: this.state.seconds,
+                  trans: clockTrans,
+                  clicked: this.state.isClicked
+                }
               }}
             >
               <Go className="start" startCountDown={this.startCountDown} />
