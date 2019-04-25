@@ -4,13 +4,9 @@ import { GOOGLE_API } from "../../.env";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import InitialView from "./InitialView";
 import SecondView from "./SecondView";
+import HistoryComp from "./History";
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <BrowserRouter>
@@ -26,10 +22,10 @@ export default class App extends Component {
               path="/SecondView"
               render={props => <SecondView {...props} isAuthed={true} />}
             />
+            <Route exact path="/history" component={HistoryComp} />
           </Switch>
         </div>
       </BrowserRouter>
     );
   }
 }
-

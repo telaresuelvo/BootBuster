@@ -8,19 +8,17 @@ import Alarms from "./Alarm";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 export default class SecondView extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
     console.log("this props second view", this.props.location.state.trans);
     return (
       <div>
         <div>
-          <MapContainer />
-        </div>
-        <div>
           <TwoClock />
+        </div>
+        <div className="his">
+          <Link to="/history">
+            <button>History</button>
+          </Link>
         </div>
       </div>
     );

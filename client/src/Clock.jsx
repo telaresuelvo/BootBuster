@@ -72,11 +72,6 @@ class Clock extends React.Component {
       <div>
         <div className="row">
           <div className="col-md-4">
-            <Route
-              exact
-              path="/SecondView"
-              render={props => <TwoClock {...props} isAuthed={true} />}
-            />
             <Timer value={this.state.value} seconds={this.state.seconds} />
             <Link
               to={{
@@ -84,7 +79,7 @@ class Clock extends React.Component {
                 state: { new: this.state.seconds, trans: clockTrans }
               }}
             >
-              <Go classname=" start" startCountDown={this.startCountDown} />
+              <Go className="start" startCountDown={this.startCountDown} />
             </Link>
 
             <TimerInput

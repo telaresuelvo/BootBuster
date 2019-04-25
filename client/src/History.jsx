@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from "react";
 
-function History() {
-  return (
-  <button className='History'> History </button>
-  )
+class HistoryComp extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div>Hello I am History</div>;
+  }
 }
-
-export default History;
+export default HistoryComp;
