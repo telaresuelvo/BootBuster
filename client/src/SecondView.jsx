@@ -33,6 +33,7 @@ export default class SecondView extends Component {
             sec={this.props.location.state.sec}
           />
         </div>
+        <Alarms />
         <div className="his">
           <Link to="/history">
             <button>History</button>
