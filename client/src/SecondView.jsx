@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
 import { GOOGLE_API } from "../../.env";
 import MapContainer from "./MapContainer.jsx";
-import CurrentLocation from "./Map.jsx";
 import TwoClock from "./TwoClock";
 import Alarms from "./Alarm";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import NewT from "./NewT.jsx";
 
 export default class SecondView extends Component {
   render() {
@@ -38,6 +38,7 @@ export default class SecondView extends Component {
           <Link to="/history">
             <button>History</button>
           </Link>
+          <NewT />
         </div>
       </div>
     );
