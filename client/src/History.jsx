@@ -10,30 +10,12 @@ class HistoryComp extends Component {
         items: []
       };
       this.addItem = this.addItem.bind(this);
-      this.getData = this.getData.bind(this);
       this.postData = this.postData.bind(this);
     }
 
-    componentDidMount() {
-      this.getData('/address');
-    }
 
-    getData(url = '/address') {
-      console.log('inside getdata')
-      return fetch(url)
-        .then(response => {
-          console.log('inside fetch, responseeeeeeee', response)
-          response.json()
-          console.log('iiiiiiiiiii am the ' + response.json());
-        })
-        .then(data => {
-          console.log('before this set state', data)
-          this.setState({
-            items: data,
-          });
-        })
-        .catch(err => console.error(err));
-    }
+
+
 
     postData(url = '', data = {}) {
       return fetch(url, {
@@ -71,6 +53,7 @@ class HistoryComp extends Component {
 
     render() {
       const { items } = this.state;
+      console.log(this.state.items);
       return (
         <div>
           <AddAddress addItem={this.addItem} postData={this.postData} />

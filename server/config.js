@@ -14,12 +14,14 @@ app.use(express.static(__dirname + "/../client/dist"));
 
 
 app.get('/address', function(req, res){
+  console.log('i am responseeeeeee'+res)
   database.selectAll((err, data) => {
     if(err){
       console.log('error connecting to the database');
       res.sendStatus(500);
     }else {
-      res.status(200).json(data3000);
+      console.log('this is dataaaaa' + data);
+      res.status(200).json(data);
     }
   })
 })

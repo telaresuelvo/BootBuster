@@ -13,15 +13,14 @@ const config = {
 const connection = mysql.createConnection(config);
 
 //Example mysql query using Promises
-const selectAll = function(cb) {
-  return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM items', (err, data) => {
-      if (err) {
-        return reject(err);
-      }
-      return resolve(data);
-    });
-  });
+var selectAll = function(cb) {
+ connection.query('SELECT * FROM items', (err, data)=> {
+   if(err) {
+     cb(err, null);
+   } else {
+     cb(null, data);
+   }
+ });
 };
 const postAddress = (address, cb) => {
   console.log('testing postAdress');
@@ -54,6 +53,5 @@ const postAddress = (address, cb) => {
 //   })
 // }
 
-module.exports = {
-  selectAll,postAddress
-};
+module.exports.selectAll = selectAll;
+module.exports.postAddress = postAddress;
