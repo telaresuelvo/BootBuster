@@ -3,6 +3,7 @@ import TimerInput from "./TimerInput.jsx";
 import Go from "./Go.jsx";
 import Timer from "./Timer.jsx";
 import { Link, Route } from "react-router-dom";
+import Alarms from "./Alarms";
 
 export default class TwoClock extends Component {
   constructor(props) {
@@ -65,18 +66,16 @@ export default class TwoClock extends Component {
   }
 
   render() {
-    console.log(
-      " receiving props from second view",
-      this.props.trans,
-      this.props.sec
-    );
+    const toc = this.state.value;
+    console.log("what is this ", toc);
     return (
       <div>
         <div className="row">
-          <div className="col-md-4" />
-          <div className="col-md-4">
-            <Timer value={this.state.value} seconds={this.state.seconds} />
-          </div>
+          <Timer value={this.state.value} seconds={this.state.seconds} />
+        </div>
+        <div>
+          <br />
+          <Alarms toc={this.state.value} />
         </div>
       </div>
     );
