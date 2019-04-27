@@ -6,21 +6,21 @@ const mysql = require('mysql2');
 const config = {
   host: 'localhost',
   user: 'root',
-  password: 'Holacode1',
+  password: 'Holacode',
   database: 'history',
 };
 
 const connection = mysql.createConnection(config);
 
 //Example mysql query using Promises
-var selectAll = function(cb) {
- connection.query('SELECT * FROM items', (err, data)=> {
-   if(err) {
-     cb(err, null);
-   } else {
-     cb(null, data);
-   }
- });
+var selectAll = function (cb) {
+  connection.query('SELECT * FROM items', (err, data) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, data);
+    }
+  });
 };
 const postAddress = (address, cb) => {
   console.log('testing postAdress');

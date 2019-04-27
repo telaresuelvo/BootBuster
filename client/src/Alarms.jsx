@@ -6,24 +6,23 @@ export default class AlarmClock extends Component {
     this.state = {
       alarmTime: ""
     };
-    this.setAlarmTime = this.setAlarmTime.bind(this);
   }
 
   componentDidMount() {
     this.interval = setInterval(() => this.checkAlarmClock(), 1000);
   }
 
-  componentWillUnmount() {
+  componentWillMount() {
     clearInterval(this.interval);
   }
 
-  setAlarmTime(event) {
+  setAlarmTime = event => {
     event.preventDefault();
-    const inputAlarmTimeModified = "02";
+    const inputAlarmTimeModified = "05";
     this.setState({
       alarmTime: inputAlarmTimeModified
     });
-  }
+  };
 
   checkAlarmClock() {
     if (this.state.alarmTime == "undefined" || !this.state.alarmTime) {
@@ -31,9 +30,10 @@ export default class AlarmClock extends Component {
     } else {
       this.alarmMessage = "Your alarm is set for " + this.state.alarmTime + ".";
       if (this.props.toc === this.state.alarmTime) {
-        setTimeout(function() {
-          alert("Hello");
-        }, 3000);
+        alert("Hello");
+        this.setState({
+          alarmTime: ""
+        });
       } else {
         console.log("not yet");
       }
@@ -43,8 +43,6 @@ export default class AlarmClock extends Component {
   render() {
     return (
       <div>
-        <h1>React Alarm Clock</h1>
-        <h2>It is {this.props.toc}.</h2>
         <h2>{this.alarmMessage}</h2>
         <form>
           <button onClick={this.setAlarmTime}>5 min</button>
