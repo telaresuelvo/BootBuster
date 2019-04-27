@@ -28,9 +28,9 @@ export default class AlarmClock extends Component {
     if (this.state.alarmTime == "undefined" || !this.state.alarmTime) {
       this.alarmMessage = "Please set your alarm.";
     } else {
-      this.alarmMessage = "Your alarm is set for " + this.state.alarmTime + ".";
+      this.alarmMessage = "Your alarm was set at 5 min before the timer ends.";
       if (this.props.toc === this.state.alarmTime) {
-        alert("Hello");
+        alert("5 MINUTES LEFT");
         this.setState({
           alarmTime: ""
         });
