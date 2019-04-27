@@ -24,14 +24,18 @@ const selectAll = function(cb) {
   });
 };
 const postAddress = (address, cb) => {
+  console.log('testing postAdress');
   connection.query(
     'INSERT INTO items (address) VALUES (?);',
     [address],
     (error, results) => {
+      console.log("results", results);
+      console.log("error", error);
       if (error) {
         throw error;
       } else {
-        cb(results);
+        console.log('hello world');
+        cb(error, results);
       }
     }
   );
