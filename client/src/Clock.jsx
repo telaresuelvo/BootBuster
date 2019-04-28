@@ -80,7 +80,7 @@ class Clock extends React.Component {
                 }
               }}
             >
-              <Go className="start" startCountDown={this.startCountDown} />
+              <Go className="btns" startCountDown={this.startCountDown} />
             </Link>
 
             <TimerInput
