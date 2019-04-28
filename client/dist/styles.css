@@ -1,8 +1,8 @@
 .row {
-
+  color: white;
   position: fixed;
   left: 55%;
-  background-color: skyblue;
+  background-color: #9ACD32;
   border: none;
   padding: 15px 32px;
   font-size: 24px;
@@ -11,26 +11,49 @@
 
 }
 
-#his {
-  float: right;
+.sec {
+  color: white;
   position: relative;
-  background-color: skyblue;
+  background-color: #9ACD32;
+  border: none;
+  padding: 15px 32px;
+  font-size: 26px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
 }
 
-.first {
-  position: relative;
-  bottom: -200px;
-  background-color: yellow;
+.his {
+  background-color: #9ACD32;
+  border: none;
+  padding: 15px 32px;
+  font-size: 24px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: fixed;
+  bottom: 0;
 }
-.second {
-  position: relative;
 
-  bottom: -200px;
-  background-color: orange;
+.btns {
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #006400;
+  border: none;
+  padding: 10px 30px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.third {
-  position: relative;
 
-  bottom: -200px;
-  background-color: red;
+.story {
+  color: white;
+  position: relative;
+  background-color: #9ACD32;
+  border: none;
+  padding: 15px 32px;
+  font-size: 26px;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

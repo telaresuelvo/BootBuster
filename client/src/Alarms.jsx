@@ -28,7 +28,8 @@ export default class AlarmClock extends Component {
     if (this.state.alarmTime == "undefined" || !this.state.alarmTime) {
       this.alarmMessage = "Please set your alarm.";
     } else {
-      this.alarmMessage = "Your alarm was set at 5 min before the timer ends.";
+      this.alarmMessage =
+        "Your alarm will activate at 5 minutes before the timer ends.";
       if (this.props.toc === this.state.alarmTime) {
         alert("5 MINUTES LEFT");
         this.setState({
@@ -42,10 +43,12 @@ export default class AlarmClock extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sec">
         <h2>{this.alarmMessage}</h2>
         <form>
-          <button onClick={this.setAlarmTime}>5 min</button>
+          <button className="btns" onClick={this.setAlarmTime}>
+            5 min
+          </button>
         </form>
       </div>
     );

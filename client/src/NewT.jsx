@@ -4,9 +4,9 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 export default class NewT extends Component {
   render() {
     return (
-      <div className="refresh">
+      <div>
         <Link to="/">
-          <button>New BOOTBUSTER</button>
+          <button className="btns">New BOOTBUSTER</button>
         </Link>
       </div>
     );

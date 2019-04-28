@@ -70,7 +70,7 @@ export default class TwoClock extends Component {
     console.log("what is this ", toc);
     return (
       <div>
-        <div className="row">
+        <div className="sec">
           <Timer value={this.state.value} seconds={this.state.seconds} />
         </div>
         <div>

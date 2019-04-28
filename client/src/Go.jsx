@@ -6,10 +6,7 @@ class Go extends React.Component {
   render() {
     return (
       <div>
-        <button
-          className="btn btn-lg btn-success"
-          onClick={this.props.startCountDown}
-        >
+        <button className="btns" onClick={this.props.startCountDown}>
           Start
         </button>
       </div>
