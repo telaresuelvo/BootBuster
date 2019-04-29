@@ -52,7 +52,7 @@ class HistoryComp extends Component {
     const { items } = this.state;
     console.log(this.state.items);
     return (
-      <div>
+      <div className="story">
         <AddAddress addItem={this.addItem} postData={this.postData} />
         <div className="addAddress">
           <PostList items={items} />
